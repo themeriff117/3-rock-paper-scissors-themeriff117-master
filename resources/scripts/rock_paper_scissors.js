@@ -101,8 +101,12 @@ class RockPaperScissors {
       document.getElementById("container").appendChild(label).appendChild(select);
       //end button Selection
 
-      //Call what the cpu does
+      //Call what the computer randomly generated
+      generateCPUResponse.call(randomrps);
+      
+      //Call the determineWinner method 
 
+      
 
     }
 
