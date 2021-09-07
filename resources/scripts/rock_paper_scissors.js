@@ -33,8 +33,41 @@ class RockPaperScissors {
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   determineWinner(userSelection, cpuSelection){
-
-  }
+      if (userSelection === 'rock') {
+        if (cpuSelection === 'paper') {
+          return 'lose';
+        }
+        if (cpuSelection === 'rock') {
+          return 'tie';
+        }
+        if (cpuSelection === 'scissors') {
+          return 'win';
+        }
+      }
+    if (userSelection === 'paper') {
+      if (cpuSelection === 'paper') {
+        return 'tie';
+      }
+      if (cpuSelection === 'rock') {
+        return 'win';
+      }
+      if (cpuSelection === 'scissors') {
+        return 'lose';
+      }
+    }
+    if (userSelection === 'scissors') {
+      if (cpuSelection === 'paper') {
+        return 'win';
+      }
+      if (cpuSelection === 'rock') {
+        return 'lose';
+      }
+      if (cpuSelection === 'scissors') {
+        return 'tie';
+      }
+    }
+    
+   }
 
   /**
    * 
