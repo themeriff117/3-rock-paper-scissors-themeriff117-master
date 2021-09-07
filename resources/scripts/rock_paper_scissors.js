@@ -14,7 +14,7 @@ class RockPaperScissors {
    */
   generateCPUResponse(){
     const acceptedValues = [ `rock`, `paper`, `scissors` ];
-
+      
     return ;
   }
   /**
@@ -66,7 +66,7 @@ class RockPaperScissors {
         return 'tie';
       }
     }
-    
+
    }
 
   /**
@@ -74,6 +74,38 @@ class RockPaperScissors {
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   play(userSelection){
+    console.WriteLine("Enter your name: ");
+    string username = Console.ReadLine();
+    console.WriteLine("Let's begin playing, " + username);
+
+    //make buttons of rps 
+    document.getElementById('generate').onclick = function () {
+
+      var rpsvalues = ["rock", "paper", "scissors"];
+
+      var select = document.createElement("select");
+      select.name = "rps";
+      select.id = "rps"
+
+      for (const val of rpsvalues) {
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        select.appendChild(option);
+      }
+
+      var label = document.createElement("label");
+      label.innerHTML = "Make your move: "
+      label.htmlFor = "rps";
+
+      document.getElementById("container").appendChild(label).appendChild(select);
+      //end button Selection
+
+      //Call what the cpu does
+
+
+    }
+
 
   }
 
