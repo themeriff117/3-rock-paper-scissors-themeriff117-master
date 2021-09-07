@@ -15,6 +15,7 @@ class RockPaperScissors {
   generateCPUResponse(){
     const acceptedValues = [ `rock`, `paper`, `scissors` ];
     const randomrps = acceptedValues[Math.floor(Math.random() * acceptedValues.length)];
+    //QUESTION: should I be using 'let' instead of 'const'?? I think I'm confusing them.
     return randomrps;
   }
   /**
@@ -75,15 +76,15 @@ class RockPaperScissors {
    */
   play(userSelection){
     console.WriteLine("Enter your name: ");
-    string username = Console.ReadLine();
-    console.WriteLine("Let's begin playing, " + username);
+    string userName = Console.ReadLine();
+    console.WriteLine("Let's begin playing, " + userName);
 
     //make buttons of rps 
     document.getElementById('generate').onclick = function () {
 
-      var rpsvalues = ["rock", "paper", "scissors"];
-
-      var select = document.createElement("select");
+      let rpsvalues = ["rock", "paper", "scissors"];
+      //QUESTION: What replaces 'var' again? That's the old way, and isn't the new way let or const?
+      let select = document.createElement("select");
       select.name = "rps";
       select.id = "rps"
 
@@ -102,11 +103,13 @@ class RockPaperScissors {
       //end button Selection
 
       //Call what the computer randomly generated
-      generateCPUResponse.call(randomrps);
-      
-      //Call the determineWinner method 
+      let comResult = generateCPUResponse.call(randomrps);
 
+      console.WriteLine("The computer choose: " + comResult + "! Your answer: " + option);
+      //is 'option' what the user selected? I'm a little confused about that
       
+      //Call the determineWinner method: determineWinner(userSelection, cpuSelection)
+      return determineWinner.call(select, comResult, option);
 
     }
 
