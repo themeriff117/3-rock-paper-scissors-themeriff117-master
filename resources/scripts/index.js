@@ -1,5 +1,5 @@
 // Elements
-const welcomeScreen = document.getElementById(`welcome-screen`);
+const welcomeScreen = document.getElementById('welcome-screen');
 const gameScreen = document.getElementById('game-screen');
 //  const gameScreen = document.querySelector(`#game-screen`);
 const startGameButton = document.getElementById('start-game-button');
@@ -13,10 +13,11 @@ const gameHistoryParagraph = document.getElementById('game-history');
 let game;
 
 // hide gamescreen
-gameScreen.classList.add(`d-none`);
+gameScreen.classList.add('d-none');
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
+//<USERNAME>: <USER_SCORE> v CPU: <CPU_SCORE>
 
 }
 
@@ -26,7 +27,7 @@ function updateGameHistoryUI(){
 }
 
 // start-game-button EventListener
-startGameButton.addEventListener(`click`, function () {
+startGameButton.addEventListener('click', function () {
   const username = 
   game = new RockPaperScissors(userName);
   // Complete
@@ -44,6 +45,3 @@ startGameButton.addEventListener(`click`, function () {
   
 });
 
-function updateScoreTallyUI() {
-  //step 3
-}

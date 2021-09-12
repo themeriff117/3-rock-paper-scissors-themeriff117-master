@@ -13,7 +13,7 @@ class RockPaperScissors {
    * using Math.random() method, you should be able to get one of the following values
    */
   generateCPUResponse(){
-    let acceptedValues = [ `rock`, `paper`, `scissors` ];
+    const acceptedValues = [ `rock`, `paper`, `scissors` ];
     let randomrps = acceptedValues[Math.floor(Math.random() * 3)];
     // let > var
     return randomrps;
@@ -34,54 +34,45 @@ class RockPaperScissors {
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   determineWinner(userSelection, cpuSelection){
-      if (userSelection === 'rock') {
-        if (cpuSelection === 'paper') {
-          return 'lose';
-        }
-        if (cpuSelection === 'rock') {
-          return 'tie';
-        }
-        if (cpuSelection === 'scissors') {
-          return 'win';
-        }
-      }
-    if (userSelection === 'paper') {
-      if (cpuSelection === 'paper') {
-        return 'tie';
-      }
-      if (cpuSelection === 'rock') {
-        return 'win';
-      }
-      if (cpuSelection === 'scissors') {
-        return 'lose';
-      }
+    if (userSelection === cpuSelection) {
+      return 'tie';
     }
-    if (userSelection === 'scissors') {
-      if (cpuSelection === 'paper') {
+    if (userSelection === 'rock' && cpuSelection === 'scissors') {
+          return 'win';
+      }
+    if (userSelection === 'paper' &&  cpuSelection === 'rock') {
         return 'win';
-      }
-      if (cpuSelection === 'rock') {
-        return 'lose';
-      }
-      if (cpuSelection === 'scissors') {
-        return 'tie';
-      }
+    }
+    if (userSelection === 'scissors' &&  cpuSelection === 'paper') {
+        return 'win';
     }
     return 'lose';
 
-   }
+    //Only the user can win in this method
+  }
 
-  /**
-   * 
-   * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
-   */
+
   play(userSelection){
-      //Call what the computer randomly generated
       let cpuResult = this.generateCPUResponse(); 
-      let myResult = determineWinner(userSelection, cpuResult);
+      let myResult = this.userSelection();
+      let therpsResult = determineWinner(userSelection, cpuSelection); //this retuns win/lose/tie
+
+      if (therpsResult == 'tie') {
+        this.gameHistoryLog.push(userName + ' selected: ' + myResult + ', CPU selected: ' 
+        + cpuResult + '. Tie!');
+      }
+      else if (therpsResult == 'win') {
+        this.score.user ++;
+        this.gameHistoryLog.push(userName + ' selected ' + myResult + ', CPU selected ' 
+        + cpuResult + '.' + userName + ' wins!');
+      }
+      else {
+        this.score.cpu ++;
+        this.gameHistoryLog.push(userName + ' selected ' + myResult + ', CPU selected ' 
+        + cpuResult + '. You lose!');
+      }
     }
 
 
   }
 
-}
