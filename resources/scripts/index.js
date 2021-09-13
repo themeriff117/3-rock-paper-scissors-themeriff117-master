@@ -8,6 +8,7 @@ const userSelection = document.getElementById('user-selection');
 const goButton = document.getElementById('go-button');
 const scoreParagraph = document.getElementById('score');
 const gameHistoryParagraph = document.getElementById('game-history');
+const resetGameButton = document.getElementById('reset-button');
 
 // instantiate the game object from the `RockPaperScissors` class.
 //let game = new RockPaperScissors(userName); //not working
@@ -51,7 +52,6 @@ goButton.addEventListener(`click`, function () {
   return false;
 })
 
-/* restartGame.addEventListener('click', function() {
-  this.scoreParagraph = [];
-  this.gameHistoryParagraph = [];
-}) */
+resetGameButton.addEventListener('click', function() {
+  location.reload();
+})
