@@ -13,9 +13,8 @@ class RockPaperScissors {
    * using Math.random() method, you should be able to get one of the following values
    */
   generateCPUResponse(){
-    const acceptedValues = [ `rock`, `paper`, `scissors` ];
+    const acceptedValues = [ 'rock', 'paper', 'scissors'];
     let randomrps = acceptedValues[Math.floor(Math.random() * 3)];
-    // let > var
     return randomrps;
   }
   /**

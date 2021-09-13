@@ -18,17 +18,17 @@
         <form id="name-form">
             <div class="form-group">
             <label for="username">Type your name:</label>
-            <input id ="username" type="text" value="Enter Name:" name="username" class="form-control"> 
+            <input id ="user-name" type="text" value="Enter Name: " name="user-name" class="form-control"> 
             </div>
             <button id="start-game-button" class="btn btn-primary"> Start Game!</button>
 
         </form>
     </div>
     <div id="game-screen">
-        <div id="score-tally">
+        <div id="score-tally"> <!-- child of line 27-->
             <p id="score">User: 0 v CPU: 0</p>
-            </div>
-            <form id="game-form">
+        </div>
+        <form id="game-form"> <!-- child of line 27-->
                 <div class="form-group">
                     <label for="user-selection">Select Your Choice:</label>
                     <select name="user-selection" id="user-selection" class="custom-select">
@@ -38,10 +38,12 @@
                     </select>
                 </div>
                 <button id="go-button" class="btn btn-success">Go!</button>
-            </form>
-        </div>
+        </form>
+    </div>
     <p id="game-history">Game History</p>
 </div>
+<script src="resources/scripts/index.js"></script>
+<script src="resources/scripts/rock_paper_scissors.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
