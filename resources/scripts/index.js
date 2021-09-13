@@ -34,13 +34,14 @@ startGameButton.addEventListener('click', function () {
   const username = userName.value;
   game = new RockPaperScissors(username);
   gameScreen.classList.remove("d-none");
-  //welcomeScreen.classList.add("d-none");
+  welcomeScreen.classList.add("d-none");
   return false;
 })
 
 /*hideWelcomeScreen.addEventListener('click', function () {
   welcomeScreen.classList.remove("d-none");
 }) */
+
 // go-button EventListener
 goButton.addEventListener(`click`, function () {
   const userselection = userSelection.value;
