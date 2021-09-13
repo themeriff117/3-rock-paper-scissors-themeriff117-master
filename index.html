@@ -15,7 +15,7 @@
         <!-- WORK FROM INSIDE THIS CONTAINER-->
     <h1>Rock Paper Scissors</h1>
     <div id="welcome-screen">
-        <form id="name-form">
+        <form id="name-form" onsubmit="return false;">
             <div class="form-group">
                 <label for="username">Type your name:</label>
                 <input id="username" type="text" value="Enter Name Here..." name="username" class="form-control" placeholder="Enter Name Here...">
@@ -29,7 +29,7 @@
             <!-- child of line 27-->
             <p id="score">User: 0 v CPU: 0</p>
         </div>
-        <form id="game-form">
+        <form id="game-form" onsubmit="return false;">
             <!-- child of line 27-->
             <div class="form-group">
                 <label for="user-selection">Select Your Choice:</label>

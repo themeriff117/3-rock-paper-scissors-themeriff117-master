@@ -14,9 +14,8 @@ class RockPaperScissors {
    */
   generateCPUResponse(){
     const acceptedValues = [ 'rock', 'paper', 'scissors'];
-    let randomrps = acceptedValues[Math.floor(Math.random() * 3)];
-    return randomrps;
-  }
+    return acceptedValues[Math.floor(Math.random() * 3)];
+    }
   /**
    * returns one of the following values: `win`, `lose`, `tie`
    * tie:
@@ -53,23 +52,22 @@ class RockPaperScissors {
 
   play(userSelection){
       let cpuResult = this.generateCPUResponse(); 
-      let myResult = this.userSelection();
-      let therpsResult = determineWinner(userSelection, cpuSelection); //this retuns win/lose/tie
+      let therpsResult = this.determineWinner(userSelection, cpuResult);
 
       if (therpsResult == 'tie') {
-        this.gameHistoryLog.push(userName + ' selected: ' + myResult + ', CPU selected: ' 
+        this.gameHistoryLog.push(this.username + ' selected: ' + userSelection + ', CPU selected: ' 
         + cpuResult + '. Tie!');
       }
-      else if (therpsResult == 'win') {
+      if (therpsResult == 'win') {
         this.score.user ++;
-        this.gameHistoryLog.push(userName + ' selected ' + myResult + ', CPU selected ' 
-        + cpuResult + '.' + userName + ' wins!');
+        this.gameHistoryLog.push(this.username + ' selected ' + userSelection + ', CPU selected ' 
+        + cpuResult + '.' + this.username + ' wins!');
       }
-      else {
+        if (therpsResult == 'lose') {
         this.score.cpu ++;
-        this.gameHistoryLog.push(userName + ' selected ' + myResult + ', CPU selected ' 
+        this.gameHistoryLog.push(this.username + ' selected ' + userSelection + ', CPU selected ' 
         + cpuResult + '. You lose!');
-      }
+        }
     }
 
 

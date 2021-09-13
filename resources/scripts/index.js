@@ -3,7 +3,7 @@ const welcomeScreen = document.getElementById('welcome-screen');
 const gameScreen = document.getElementById('game-screen');
 //  const gameScreen = document.querySelector(`#game-screen`);
 const startGameButton = document.getElementById('start-game-button');
-const userName = document.getElementById('user-name');
+const userName = document.getElementById('username');
 const userSelection = document.getElementById('user-selection');
 const goButton = document.getElementById('go-button');
 const scoreParagraph = document.getElementById('score');
@@ -17,10 +17,10 @@ let game;
 gameScreen.classList.add('d-none');
 
 function updateScoreTallyUI() {
-  const userScore = game.score.user;
-  const cpuScore = game.score.cpu;
+  const userscore = game.score.user;
+  const cpuscore = game.score.cpu;
   const username = game.username;
-  let scoretally = username + ":" + userscore + " v CPU: " + cpuscore;
+  let scoretally = username + ": " + userscore + " v CPU: " + cpuscore;
   scoreParagraph.innerHTML = scoretally;
 }
 
@@ -32,19 +32,19 @@ function updateGameHistoryUI(){
 // start-game-button EventListener
 startGameButton.addEventListener('click', function () {
   const username = userName.value;
-  game = new RockPaperScissors(userName);
+  game = new RockPaperScissors(username);
   gameScreen.classList.remove("d-none");
   //welcomeScreen.classList.add("d-none");
-});
-
-hideWelcomeScreen.addEventListener('click', function () {
-  welcomeScreen.classList.remove("d-none");
+  return false;
 })
 
+/*hideWelcomeScreen.addEventListener('click', function () {
+  welcomeScreen.classList.remove("d-none");
+}) */
 // go-button EventListener
 goButton.addEventListener(`click`, function () {
   const userselection = userSelection.value;
-  game.play(userSelection);
+  game.play(userselection);
   updateScoreTallyUI();
   updateGameHistoryUI();
   return false;
